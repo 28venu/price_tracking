@@ -1,0 +1,108 @@
+/* Navbar Background Color */
+.bg-nav {
+    background-image: linear-gradient(179deg, #4596FB 20%, #57F2CC 48%, #D4FFEC 80%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Padding for View, Login, Register Box */
+.row-V,
+.row-l,
+.row-R {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+/* Background Color for Login/Register Card */
+.card {
+    background-color: #00b4d8;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Overall Web Background Color */
+.bg-body {
+    background-color: rgb(90, 240, 228) !important;
+}
+
+/* Color and Adjustment of Table */
+th {
+    background-color: #00B4D8 !important;
+    color: #333 !important;
+    padding: 12px !important;
+    text-align: left !important;
+    border: none !important;
+}
+
+td {
+    background-color: #ADE8F4 !important;
+    color: #333 !important;
+    border: none !important;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 800px;
+}
+
+/* Adjusting Login and Hello */
+.mt-100 {
+    margin-top: 100px;
+}
+
+.display-4 {
+    width: 300px;
+    height: 300px;
+    padding-left: 300px;
+    margin-bottom: 50px;
+}
+
+/* Title Font in Navbar */
+.fs-4 {
+    padding-left: 40px;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff; /* White */
+}
+
+/* Navbar Logo */
+.nav_logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Hover Effect for Navbar Links */
+.nav-link:hover {
+    color: #ffffff; /* White */
+    text-decoration: none;
+}
+
+/* Lock Icon Color */
+.lock-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    fill: #6c757d; /* Gray */
+}
+
+/* Alert Colors */
+.alert {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background-color: #ff6b6b; /* Light red */
+    color: #721c24; /* Dark red */
+}
+
+.alert-success {
+    background-color: #4caf50; /* Green */
+    color: #ffffff; /* White */
+}
+
+/*.card:hover .card-content h3  */

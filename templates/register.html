@@ -1,0 +1,47 @@
+{% extends "basic.html" %}
+
+{% block title %}register{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row-R">
+        <div class="col-md-8">
+          <div class="display-4 mt-100">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+              <dotlottie-player src="https://lottie.host/dc340585-9733-416d-a01c-3e57d298432f/nofQyujuuL.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mt-100">
+            <div class="card-body">
+              <form method="post">
+                <label for="name">Name</label>
+                  <input type="text"
+                    class="form-control"
+                    id="name" name="name"
+                  >
+
+                <label for="email">Email</label>
+                  <input type="text"
+                    class="form-control"
+                    id="email" name="email"
+                  >
+
+                <label for="password">Password</label>
+                  <input type="password"
+                    class="form-control"
+                    id="password" name="password"
+                  >
+                <br>
+                <button class="btn btn-primary rounded-pill px-3" type="submit">register</button>
+              </form>
+              <p class="mt-2"> Already a user? <a href="/login">Login Here</a></p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+{% endblock %}

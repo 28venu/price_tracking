@@ -1,0 +1,41 @@
+{% extends "basic.html" %}
+
+{% block title %}view{% endblock %}
+
+{% block content %}
+<table class="table caption-top table-striped">
+  <caption><strong style="color: #333 !important">List of products</strong></caption>
+  <thead>
+    <tr>
+      <th scope="col">product name</th>
+      <th scope="col">amazon price</th>
+      <th scope="col">flipkart price</th>
+      <th scope="col">jiomart price</th>
+      <th scope="col">status</th>
+    </tr>
+  </thead>
+  <tbody class="t_body">
+  {% for data in datas %}
+  {% if data.user_id == user_id %}
+    <tr>
+      <td>{{ data.product_name }}</td>
+      <td>{{ data.amazon_price}}</td>
+      <td>{{ data.flipkart_price }}</td>
+      <td>{{ data.jiomart_price }}</td>
+      <td>{% if data.status == "pending" %}
+            <a href="{{ url_for('buyed_item',item_id=data.id ) }}">
+                <button type="button" class="btn btn-success" value="accept">product bought...</button></a>
+            <a href="{{ url_for('reject_item',item_id=data.id  ) }} ">
+                <button type="button" class="btn btn-danger" value="reject">stop email service</button></a>
+        {% else %}
+        {{ data.status }}
+        {% endif %}
+      </td>
+    </tr>
+  {% endif %}
+  {% endfor %}
+  </tbody>
+</table>
+<a href="{{ url_for('add') }}">
+<button type="button" class="btn btn-dark">add new product</button></a>
+{% endblock %}

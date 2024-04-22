@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading</title>
+    <style>
+        .bg-body {
+            background-color: rgb(90, 240, 228) !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #loader {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logos,
+        .logos1,
+        .logos2 {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            z-index: 1;
+        }
+
+        .logos1 {
+            margin-top: -100px; /* Adjust this value for the desired overlap */
+            z-index: 2;
+        }
+
+        .logos2 {
+            margin-top: -200px; /* Adjust this value for the desired overlap */
+            z-index: 0;
+            padding-right: 80px;
+        }
+
+        #iframe-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95); /* semi-transparent white */
+            z-index: 1000;
+            display: none;
+        }
+
+        #load-data-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-body">
+    <div id="loader">
+        <div class="logos">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="https://lottie.host/c1e15ae9-3d6c-4f32-a2fd-4e1a8ddd84d5/xPQDOg6vvk.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+        </div>
+        <div class="logos1">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="https://lottie.host/711d6d6b-736e-45f4-b35c-4bea6eda2e58/N4jxSlBvBu.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+        </div>
+        <div class="logos2">
+            <img src="{{ url_for('static', filename='text1.png') }}" width="400px" height="400px">
+        </div>
+    </div>
+
+    <div id="iframe-container">
+        <iframe id="load-data-iframe" src="/ajio_data/{{ a }}"></iframe>
+    </div>
+
+    <div id="result"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("loader").style.display = "none";
+                    document.getElementById("result").innerHTML = xhr.responseText;
+
+                    // Change the URL without triggering a page reload
+                    history.replaceState({}, null, "/ajio"); // You can update the URL as needed
+                    document.title = "view";
+
+                    // Show the iframe container
+                    var iframeContainer = document.getElementById("iframe-container");
+                    iframeContainer.style.display = "block";
+                    var iframe = document.getElementById("load-data-iframe");
+                    iframe.contentWindow.document.open();
+                    iframe.contentWindow.document.write(xhr.responseText);
+<!--                    iframe.contentWindow.document.write(responseData.script_content);-->
+                    iframe.contentWindow.document.close();
+
+                    }
+            };
+            xhr.open("GET", "/ajio_data/{{ a }}", true);
+            xhr.send();
+        });
+    </script>
+
+</body>
+</html>

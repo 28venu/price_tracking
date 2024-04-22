@@ -1,0 +1,31 @@
+{% extends "basic.html" %}
+
+{% block title %}add{% endblock %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="p_link">Enter the product link you want to buy...</label>
+        <input type="text"
+               class="form-control"
+               id="p_link"
+               name="p_link"
+               placeholder="link">
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="p_price">Enter the price at which you want to be notified...</label>
+        <input type="text"
+               class="form-control"
+               id="p_price"
+               name="p_price" basi
+               placeholder="price">
+    </div>
+    <br/>
+
+    <br/>
+    <button class="btn btn-primary rounded-pill px-3" type="submit">submit</button>
+</form>
+
+{% endblock %}

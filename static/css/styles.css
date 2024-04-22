@@ -1,0 +1,71 @@
+
+/*navbar background color*/
+.bg-nav{
+background-image: linear-gradient(179deg,#4596FB  20%, #57F2CC 48%, #D4FFEC 80%);
+}
+
+
+/*padding for view,login,register box */
+.row-V,
+.row-l,
+ .row-R{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+/*background color for login register card*/
+.card{
+background-color: #00b4d8;
+}
+
+/*overall web background color*/
+.bg-body{
+    background-color:  rgb(90,240,228) !important;
+}
+/* color and adjustment of table */
+ th {
+            background-color: #00B4D8 !important;
+            color: #333 !important;;
+            padding: 12px !important;;
+            text-align: left !important;;
+        }
+
+td{
+    background-color: #ADE8F4!important;
+    color: #333 !important;
+}
+
+th:nth-child(1) {
+    width: 800px;
+}
+
+td:nth-child(1) {
+    width: 800px;
+}
+/*adjusting loging and hello */
+.mt-100{
+margin-top:100px;
+}
+
+.display-4{
+    width:300px;
+    height:300px;
+    padding-left:300px;
+}
+
+/* title font in nav bar */
+.fs-4{
+    padding-left:40px;
+    font-family: 'Playfair Display', serif;
+}
+
+
+.nav_logo{
+width:50px;
+height:50px;
+}

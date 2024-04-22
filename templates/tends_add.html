@@ -1,0 +1,20 @@
+{% extends "basic.html" %}
+{% block title %}add{% endblock %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="p_link">Enter the product ART number from the price tag</label>
+        <input type="text"
+               class="form-control"
+               id="p_link"
+               name="p_link"
+               placeholder="link">
+    </div>
+    <br/>
+    <br/>
+    <button class="btn btn-primary rounded-pill px-3" type="submit">submit</button>
+</form>
+
+{% endblock %}
