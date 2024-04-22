@@ -42,8 +42,8 @@ The Price Tracking System utilizes Selenium and PhantomJS to automate web browsi
 
 #### Adding a Product (with ART number)
 ![Adding a Product (with ART number)](https://github.com/28venu/price_tracking/assets/127669660/87345efe-40e6-484f-b0ba-f1dad1d90cab)
-- ART number on AJIO price tag
-  ![ART number](https://github.com/28venu/price_tracking/assets/127669660/1e139a91-cdf7-4efd-ae3f-8bb57c278003)
+#### ART number on AJIO price tag
+![ART number](https://github.com/28venu/price_tracking/assets/127669660/1e139a91-cdf7-4efd-ae3f-8bb57c278003)
 
 #### Product Details (after adding)
 ![Product Details (after adding)]![image](https://github.com/28venu/price_tracking/assets/127669660/ae4ee3e8-a3c4-4a55-8ade-06f41b251524)
